@@ -212,7 +212,7 @@ end
 localparam mod_battlezone  = 0;
 localparam mod_bradley     = 1;
 localparam mod_redbaron   = 2;
-localparam mod_tempest   = 2;
+localparam mod_tempest   = 3;
 
 
 reg [7:0] mod = 255;

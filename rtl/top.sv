@@ -102,7 +102,7 @@ module top
   // The rom starts at 0, so we subtract the starting address 'h9000 from the address
   // on tempest we also have to map the interrupt vectors, they start at F0000 so we subtract a bit more to 
   // get them to land on the top rom
-  assign prog_rom_addr = (addrToBram[`BRAM_PROG_ROM]>16'hEFFF) ?  addrToBram[`BRAM_PROG_ROM]-16'hB000 : addrToBram[`BRAM_PROG_ROM]-16'h9000;
+  assign prog_rom_addr = (addrToBram[`BRAM_PROG_ROM]>16'hEFFF) ?  (addrToBram[`BRAM_PROG_ROM]-16'hB000) : (addrToBram[`BRAM_PROG_ROM]-16'h9000);
 
   logic              avg_halt;
 
