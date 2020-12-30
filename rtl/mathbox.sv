@@ -102,138 +102,138 @@ module mathBox
                 status = 0;
                 if(we) begin
                     case(addr)
-                        16'h060: begin
+                        16'h080: begin
                             mbRegD[0][7:0] = DI;
                             mbRegEn[0] = 2'b01;
                             mbOutD = {mbRegQ[0][15:8], mbRegD[0][7:0]};
                             mbOutEn = 1'b1;
                         end
-                        16'h61: begin
+                        16'h81: begin
                             mbRegD[0][15:8] = DI;
                             mbRegEn[0] = 2'b10;
                             mbOutD = {DI, mbRegQ[0][7:0]};
                             mbOutEn = 1'b1;
                         end
-                        16'h62: begin
+                        16'h82: begin
                             mbRegD[1][7:0] = DI;
                             mbRegEn[1] = 2'b01;
                             mbOutD = {mbRegQ[1][15:8], mbRegD[1][7:0]};
                             mbOutEn = 1'b1;
                         end
-                        16'h63: begin
+                        16'h83: begin
                             mbRegD[1][15:8] = DI;
                             mbRegEn[1] = 2'b10;
                             mbOutD = {DI, mbRegQ[1][7:0]};
                             mbOutEn = 1'b1;
 
                         end
-                        16'h64: begin
+                        16'h84: begin
                             mbRegD[2][7:0] = DI;
                             mbRegEn[2] = 2'b01;
                             mbOutD = {mbRegQ[2][15:8], mbRegD[2][7:0]};
                             mbOutEn = 1'b1;
                         end
-                        16'h65: begin
+                        16'h85: begin
                             mbRegD[2][15:8] = DI;
                             mbRegEn[2] = 2'b10;
                             mbOutD = {DI, mbRegQ[2][7:0]};
                             mbOutEn = 1'b1;
 
                         end
-                        16'h66: begin
+                        16'h86: begin
                             mbRegD[3][7:0] = DI;
                             mbRegEn[3] = 2'b01;
                             mbOutD = {mbRegQ[3][15:8], mbRegD[3][7:0]};
                             mbOutEn = 1'b1;
                         end
-                        16'h67: begin
+                        16'h87: begin
                             mbRegD[3][15:8] = DI;
                             mbRegEn[3] = 2'b10;
                             mbOutD = {DI, mbRegQ[3][7:0]};
                             mbOutEn = 1'b1;
                         end
-                        16'h68: begin
+                        16'h88: begin
                             mbRegD[4][7:0] = DI;
                             mbRegEn[4] = 2'b01;
                             mbOutD = {mbRegQ[4][15:8], mbRegD[4][7:0]};
                             mbOutEn = 1'b1;
                         end
-                        16'h69: begin
+                        16'h89: begin
                             mbRegD[4][15:8] = DI;
                             mbRegEn[4] = 2'b10;
                             mbOutD = {DI, mbRegQ[4][7:0]};
                             mbOutEn = 1'b1;
 
                         end
-                        16'h6a: begin
+                        16'h8a: begin
                             mbRegD[5][7:0] = DI;
                             mbRegEn[5] = 2'b01;
                             mbOutD = {mbRegQ[5][15:8], mbRegD[5][7:0]};
                             mbOutEn = 1'b1;
                         end
-                        16'h6c: begin
+                        16'h8c: begin
                             mbRegD[6] = {8'h00, DI};
                             mbRegEn[6] = 2'b11;
                             mbOutD = {8'h00, DI};
                             mbOutEn = 1'b1;
                         end
-                        16'h75: begin
+                        16'h95: begin
                             mbRegD[7][7:0] = DI;
                             mbRegEn[7] = 2'b01;
                             mbOutD = {mbRegQ[7][15:8], mbRegD[7][7:0]};
                             mbOutEn = 1'b1;
                         end
-                        16'h76: begin
+                        16'h96: begin
                             mbRegD[7][15:8] = DI;
                             mbRegEn[7] = 2'b10;
                             mbOutD = {DI, mbRegQ[7][7:0]};
                             mbOutEn = 1'b1;
                         end
-                        16'h7a: begin
+                        16'h9a: begin
                             mbRegD[8][7:0] = DI;
                             mbRegEn[8] = 2'b01;
                             mbOutD = {mbRegQ[8][15:8], mbRegD[8][7:0]};
                             mbOutEn = 1'b1;
                         end
-                        16'h7b: begin
+                        16'h9b: begin
                             mbRegD[8][15:8] = DI;
                             mbRegEn[8] = 2'b10;
                             mbOutD = {DI, mbRegQ[8][7:0]};
                             mbOutEn = 1'b1;
                         end
-                        16'h6d: begin
+                        16'h8d: begin
                             mbRegD[10][7:0] = DI;
                             mbRegEn[10] = 2'b01;
                             mbOutD = {mbRegQ[10][15:8], mbRegD[10][7:0]};
                             mbOutEn = 1'b1;
                         end
-                        16'h6e: begin
+                        16'h8e: begin
                             mbRegD[10][15:8] = DI;
                             mbRegEn[10] = 2'b10;
                             mbOutD = {DI, mbRegQ[10][7:0]};
                             mbOutEn = 1'b1;
                         end
-                        16'h6f: begin
+                        16'h8f: begin
                             mbRegD[11][7:0] = DI;
                             mbRegEn[11] = 2'b01;
                             mbOutD = {mbRegQ[11][15:8], mbRegD[11][7:0]};
                             mbOutEn = 1'b1;
                         end
-                        16'h70: begin
+                        16'h90: begin
                             mbRegD[11][15:8] = DI;
                             mbRegEn[11] = 2'b10;
                             mbOutD = {DI, mbRegQ[11][7:0]};
                             mbOutEn = 1'b1;
                         end
-                        16'h77: begin
+                        16'h97: begin
                             mbOutD = mbRegQ[7];
                             mbOutEn = 1'b1;
                         end
-                        16'h79: begin
+                        16'h99: begin
                             mbOutD = mbRegQ[8];
                             mbOutEn = 1'b1;
                         end
-                        16'h78: begin
+                        16'h98: begin
                             mbOutD = mbRegQ[9];
                             mbOutEn = 1'b1;
                         end
@@ -450,13 +450,13 @@ module mathBox
             IDLE: begin
                 if(we) begin
                     case(addr)
-                        8'h6b: nextState = C0B;
-                        8'h72: nextState = C12A;
-                        8'h73: nextState = C13;
-                        8'h74: nextState = C14;
-                        8'h71: nextState = C11;
-                        8'h7D: nextState = C1D;
-                        8'h7E: nextState = C1EA;
+                        8'h7b: nextState = C0B;
+                        8'h82: nextState = C12A;
+                        8'h83: nextState = C13;
+                        8'h84: nextState = C14;
+                        8'h81: nextState = C11;
+                        8'h8D: nextState = C1D;
+                        8'h8E: nextState = C1EA;
                         default: nextState = IDLE;
                     endcase
                 end

@@ -166,7 +166,7 @@ module addrDecoder
         mathboxAccess = bramNum == `BRAM_MATH;
         addrToBram[0] = 'd0;
         addrToBram[1] = 'd0;
-        addrToBram[2] = 'h4000;
+        addrToBram[2] = 'h9000;
         addrToBram[3] = 'd0;
         addrToBram[4] = 'd0;
         addrToBram[5] = 'd0;
