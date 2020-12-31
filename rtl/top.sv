@@ -97,12 +97,12 @@ module top
   logic              coreReset;
 
   logic [15:0]       prog_rom_addr;
-  //assign prog_rom_addr = addrToBram[`BRAM_PROG_ROM]-16'h9000;
+  assign prog_rom_addr = addrToBram[`BRAM_PROG_ROM]-16'h9000;
   
   // The rom starts at 0, so we subtract the starting address 'h9000 from the address
   // on tempest we also have to map the interrupt vectors, they start at F0000 so we subtract a bit more to 
   // get them to land on the top rom
-  assign prog_rom_addr = (addrToBram[`BRAM_PROG_ROM]>16'hEFFF) ?  (addrToBram[`BRAM_PROG_ROM]-16'hB000) : (addrToBram[`BRAM_PROG_ROM]-16'h9000);
+  //assign prog_rom_addr = (addrToBram[`BRAM_PROG_ROM]>16'hEFFF) ?  (addrToBram[`BRAM_PROG_ROM]-16'hB000) : (addrToBram[`BRAM_PROG_ROM]-16'h9000);
 
   logic              avg_halt;
 
@@ -213,7 +213,7 @@ assign clk=clk_i;
      .vggo           (vggo),
      .vgrst          (vgrst),
      .dataFromCore   (dataOut),
-     .addr           ({1'b0, address[14:0]}),
+     .addr           ( address[15:0]),
      .dataFromBram   (dataFromBram),
      .we             (WE),
      .halt           (avg_halt),
@@ -230,17 +230,18 @@ assign clk=clk_i;
 	  .mod_redbaron   (mod_redbaron)
      );
 
-wire prog_rom_cs = dl_addr < 'h5000;
+wire prog_rom_cs = dl_addr < 'h7000;
 
   dpram #(.addr_width_g(15),.data_width_g(8)) progRom (
 	.clock_a(clk),
-	.address_a(dl_addr[14:0]),
+	.address_a(dl_addr[14:0]+'d4096),
 	.data_a(dl_data),
 	.wren_a(dl_wr & prog_rom_cs),
 	
 	.clock_b(clk),
 	.enable_b(clk_3MHz_en),
-	.address_b(prog_rom_addr[14:0]),
+//	.address_b(prog_rom_addr[14:0]),
+	.address_b(addrToBram[`BRAM_PROG_ROM][14:0]),
 	.q_b(dataFromBram[`BRAM_PROG_ROM])
 	);
 /*	
@@ -279,7 +280,7 @@ wire prog_rom_cs = dl_addr < 'h5000;
      );
 
 	  
-	wire vec_rom_cs = dl_addr >= 'h5000 && dl_addr< 'h6000 ;
+	wire vec_rom_cs = dl_addr >= 'h7000 && dl_addr< 'h8000 ;
 
   dpram #(.addr_width_g(13),.data_width_g(8)) vecRam2 (
 	.clock_a(clk),
@@ -288,7 +289,7 @@ wire prog_rom_cs = dl_addr < 'h5000;
 	.wren_a(dl_wr & vec_rom_cs),
 	
 	.clock_b(clk),
-	.enable_b(clk_3MHz_en),
+	.enable_b(clk_3MHz_en), 
 	.address_b(addrToBram[`BRAM_VECTOR][12:0]),
 	.wren_b(weEnBram[`BRAM_VECTOR]),
 	.data_b(dataToBram[`BRAM_VECTOR]),

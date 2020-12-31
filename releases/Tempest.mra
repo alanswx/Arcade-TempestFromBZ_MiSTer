@@ -21,6 +21,8 @@
 		<part crc="a4b2ce3f" name="136002-235.j1"/>
 		<part crc="65a9a9f9" name="136002-136.lm1"/>
 		<part crc="de4e9e34" name="136002-237.p1"/>
+		<part crc="de4e9e34" name="136002-237.p1"/>
+		<part crc="de4e9e34" name="136002-237.p1"/>
 		<!-- vector rom 4k -->
 		<part crc="9995256d" name="136002-138.np3"/>
 		<!-- mathbox prom -->
