@@ -213,7 +213,7 @@ assign clk=clk_i;
      .vggo           (vggo),
      .vgrst          (vgrst),
      .dataFromCore   (dataOut),
-     .addr           ( address[15:0]),
+     .addr           (address),
      .dataFromBram   (dataFromBram),
      .we             (WE),
      .halt           (avg_halt),
@@ -231,7 +231,7 @@ assign clk=clk_i;
      );
 
 wire prog_rom_cs = dl_addr < 'h7000;
-
+/*
   dpram #(.addr_width_g(15),.data_width_g(8)) progRom (
 	.clock_a(clk),
 	.address_a(dl_addr[14:0]+'d4096),
@@ -244,7 +244,27 @@ wire prog_rom_cs = dl_addr < 'h7000;
 	.address_b(addrToBram[`BRAM_PROG_ROM][14:0]),
 	.q_b(dataFromBram[`BRAM_PROG_ROM])
 	);
-/*	
+*/
+/*
+progrom progRom
+(
+	.addr(prog_rom_addr[14:0]),
+	.clk(clk),
+	.dout(dataFromBram[`BRAM_PROG_ROM]),
+	.cs(1'b1),
+	);
+*/
+
+
+  tempest_cpu progRom
+  (
+	  .addr        (prog_rom_addr[14:0]),
+     .clk         (clk_3MHz_en),
+     //.clk_en      (clk_3MHz_en),
+     .data        (dataFromBram[`BRAM_PROG_ROM])
+	);
+
+	/*	
   prog_rom progRom
     (
      .addr        (prog_rom_addr[13:0]),

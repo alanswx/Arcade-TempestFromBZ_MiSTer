@@ -2,6 +2,7 @@ set_global_assignment -name SYSTEMVERILOG_FILE "Arcade-Tempest.sv"
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/top.sv
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/sp_ram.sv
 set_global_assignment -name VHDL_FILE rtl/dpram.vhd
+set_global_assignment -name VHDL_FILE roms/tempest_cpu.vhd
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/POKEY.sv
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/mathbox.sv
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/cpu.sv
@@ -13,3 +14,4 @@ set_global_assignment -name SYSTEMVERILOG_FILE rtl/rasterizer.sv
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/VGA_fsm.sv
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/matoro.sv
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/fb_controller.sv
+#set_global_assignment -name SYSTEMVERILOG_FILE roms/progrom.v

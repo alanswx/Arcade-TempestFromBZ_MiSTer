@@ -140,7 +140,7 @@ module addrDecoder
 					sound_access = 1'b1;
 			  end
 			  else if(addr == 16'h6040 || addr == 16'h6060 || addr == 16'h6070 || (16'h6080 <= addr && addr <= 16'h609F)) bramNum = `BRAM_MATH;
-			  else bramNum = 5; //error code
+			  else bramNum = 6; //error code
 			end 
 			else
 			begin
@@ -184,7 +184,7 @@ module addrDecoder
         dataToBram[bramNum] = dataFromCore;
         addrToBram[bramNum] = addr;
 
-        if(outBramNum < 5) begin
+        if(outBramNum < 6) begin
             dataToCore = dataFromBram[outBramNum];
         end
         else begin
