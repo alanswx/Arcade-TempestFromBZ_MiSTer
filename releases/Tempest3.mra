@@ -1,0 +1,41 @@
+<misterromdescription>
+	<name>Tempest</name>
+	<mameversion>0226</mameversion>
+	<setname>tempest</setname>
+	<mratimestamp>20201224151551</mratimestamp>
+	<year>1980</year>
+	<manufacturer>Atari</manufacturer>
+	<rbf>Tempest</rbf>
+	<mameinfo parent="0" cpp="tempest" input="bzone"/>
+	<display type="vector" rotate="0"/>
+	<switches default="15,03">
+		
+	</switches>
+	<buttons names="fire,Start 1P,Start 2P,Coin" default="A,Start,Select,R"/>
+	<rom index="0" zip="tempest3.zip" md5="none">
+		<!-- program rom - 4k * 5 = 20k -->
+		<part crc="65d61fe7" name="136002-113.d1"/>
+		<part crc="11077375" name="136002-114.e1"/>
+		<part crc="f3e2827a" name="136002-115.f1"/>
+		<part crc="aeb0f7e9" name="136002-316.h1"/>
+		<part crc="ef2eb645" name="136002-217.j1"/>
+		<part crc="beb352ab" name="136002-118.k1"/>
+		<part crc="a4de050f" name="136002-119.lm1"/>
+		<part crc="35619648" name="136002-120.mn1"/>
+		<part crc="73d38e47" name="136002-121.p1"/>
+		<part crc="707bd5c3" name="136002-222.r1"/>
+		<part crc="707bd5c3" name="136002-222.r1"/>
+		<part crc="707bd5c3" name="136002-222.r1"/>
+		<part crc="707bd5c3" name="136002-222.r1"/>
+		<part crc="707bd5c3" name="136002-222.r1"/>
+		<part crc="707bd5c3" name="136002-222.r1"/>
+		<!-- vector rom 4k -->
+		<part crc="29f7e937" name="136002-123.np3"/>
+		<part crc="c16ec351" name="136002-124.r3"/>
+		<!-- mathbox prom -->
+		<part crc="8b04f921" name="136002-126.a1"/>
+	</rom>
+	<rom index="1">
+		<part>3</part>
+	</rom>
+</misterromdescription>

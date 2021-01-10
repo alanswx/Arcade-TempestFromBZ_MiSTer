@@ -13,8 +13,6 @@
 	</switches>
 	<buttons names="fire,Start 1P,Start 2P,Coin" default="A,Start,Select,R"/>
 	<rom index="0" zip="tempest.zip" md5="none">
-		<part repeat="2048">0</part>
-		<part repeat="2048">0</part>
 		<!-- program rom - 4k * 5 = 20k -->
 		<part crc="1d0cc503" name="136002-133.d1"/>
 		<part crc="c88e3524" name="136002-134.f1"/>

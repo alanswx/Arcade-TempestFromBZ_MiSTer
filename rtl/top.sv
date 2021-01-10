@@ -259,8 +259,8 @@ progrom progRom
   tempest_cpu progRom
   (
 	  .addr        (prog_rom_addr[14:0]),
-     .clk         (clk_3MHz_en),
-     //.clk_en      (clk_3MHz_en),
+     .clk         (clk),
+     .clk_en      (clk_3MHz_en),
      .data        (dataFromBram[`BRAM_PROG_ROM])
 	);
 
